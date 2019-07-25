@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Features",
+        "repositoryURL": "https://github.com/refined-swift/Features.git",
+        "state": {
+          "branch": "master",
+          "revision": "66e42f8038ce2dec72ae9565ea60a4cd126ab9f8",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
