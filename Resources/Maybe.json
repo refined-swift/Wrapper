@@ -1,0 +1,929 @@
+[
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "ClosedRange",
+      "Dictionary",
+      "Dictionary.Keys",
+      "Dictionary.Values",
+      "Range",
+      "Set",
+      "String",
+      "_ValidUTF8Buffer"
+    ],
+    "signature" : "var isEmpty: Bool { get }",
+    "callName" : "isEmpty",
+    "protocols" : [
+      "Collection",
+      "SetAlgebra"
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeEmpty"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Double",
+      "Float",
+      "Float80"
+    ],
+    "signature" : "var isInfinite: Bool { get }",
+    "callName" : "isInfinite",
+    "protocols" : [
+      "FloatingPoint"
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeInfinite"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Double",
+      "Float",
+      "Float80"
+    ],
+    "signature" : "var isZero: Bool { get }",
+    "callName" : "isZero",
+    "protocols" : [
+      "FloatingPoint"
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeZero"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Double",
+      "Float",
+      "Float80"
+    ],
+    "signature" : "var isNormal: Bool { get }",
+    "callName" : "isNormal",
+    "protocols" : [
+      "FloatingPoint"
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeNormal"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Double",
+      "Float",
+      "Float80"
+    ],
+    "signature" : "var isFinite: Bool { get }",
+    "callName" : "isFinite",
+    "protocols" : [
+      "FloatingPoint"
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeFinite"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Character",
+      "StaticString",
+      "Unicode.Scalar"
+    ],
+    "signature" : "var isASCII: Bool { get }",
+    "callName" : "isASCII",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeAscii"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Double",
+      "Float",
+      "Float80"
+    ],
+    "signature" : "var isCanonical: Bool { get }",
+    "callName" : "isCanonical",
+    "protocols" : [
+      "FloatingPoint"
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeCanonical"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Double",
+      "Float",
+      "Float80"
+    ],
+    "signature" : "var isSignalingNaN: Bool { get }",
+    "callName" : "isSignalingNaN",
+    "protocols" : [
+      "FloatingPoint"
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeSignalingNaN"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Double",
+      "Float",
+      "Float80"
+    ],
+    "signature" : "var isNaN: Bool { get }",
+    "callName" : "isNaN",
+    "protocols" : [
+      "FloatingPoint"
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeNaN"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Double",
+      "Float",
+      "Float80"
+    ],
+    "signature" : "var isSubnormal: Bool { get }",
+    "callName" : "isSubnormal",
+    "protocols" : [
+      "FloatingPoint"
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeSubnormal"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Character",
+      "Unicode.Scalar.Properties"
+    ],
+    "signature" : "var isUppercase: Bool { get }",
+    "callName" : "isUppercase",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeUppercase"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Character",
+      "Unicode.Scalar.Properties"
+    ],
+    "signature" : "var isLowercase: Bool { get }",
+    "callName" : "isLowercase",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeLowercase"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Character",
+      "Unicode.Scalar.Properties"
+    ],
+    "signature" : "var isHexDigit: Bool { get }",
+    "callName" : "isHexDigit",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeHexDigit"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Character",
+      "Unicode.Scalar.Properties"
+    ],
+    "signature" : "var isCased: Bool { get }",
+    "callName" : "isCased",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeCased"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Character",
+      "Unicode.Scalar.Properties"
+    ],
+    "signature" : "var isWhitespace: Bool { get }",
+    "callName" : "isWhitespace",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeWhitespace"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Unicode.Scalar.Properties"
+    ],
+    "signature" : "var isIDContinue: Bool { get }",
+    "callName" : "isIDContinue",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeIdcontinue"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Unicode.Scalar.Properties"
+    ],
+    "signature" : "var isRadical: Bool { get }",
+    "callName" : "isRadical",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeRadical"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Unicode.Scalar.Properties"
+    ],
+    "signature" : "var isUnifiedIdeograph: Bool { get }",
+    "callName" : "isUnifiedIdeograph",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeUnifiedIdeograph"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Character"
+    ],
+    "signature" : "var isNumber: Bool { get }",
+    "callName" : "isNumber",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeNumber"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Unicode.Scalar.Properties"
+    ],
+    "signature" : "var isIdeographic: Bool { get }",
+    "callName" : "isIdeographic",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeIdeographic"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Unicode.Scalar.Properties"
+    ],
+    "signature" : "var isXIDContinue: Bool { get }",
+    "callName" : "isXIDContinue",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeXidcontinue"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Unicode.Scalar.Properties"
+    ],
+    "signature" : "var isTerminalPunctuation: Bool { get }",
+    "callName" : "isTerminalPunctuation",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeTerminalPunctuation"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Unicode.Scalar.Properties"
+    ],
+    "signature" : "var isXIDStart: Bool { get }",
+    "callName" : "isXIDStart",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeXidstart"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Character"
+    ],
+    "signature" : "var isSymbol: Bool { get }",
+    "callName" : "isSymbol",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeSymbol"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Unicode.Scalar.Properties"
+    ],
+    "signature" : "var isDefaultIgnorableCodePoint: Bool { get }",
+    "callName" : "isDefaultIgnorableCodePoint",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeDefaultIgnorableCodePoint"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Character"
+    ],
+    "signature" : "var isPunctuation: Bool { get }",
+    "callName" : "isPunctuation",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybePunctuation"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Unicode.Scalar.Properties"
+    ],
+    "signature" : "var isGraphemeExtend: Bool { get }",
+    "callName" : "isGraphemeExtend",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeGraphemeExtend"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Character"
+    ],
+    "signature" : "var isMathSymbol: Bool { get }",
+    "callName" : "isMathSymbol",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeMathSymbol"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Unicode.Scalar.Properties"
+    ],
+    "signature" : "var isGraphemeBase: Bool { get }",
+    "callName" : "isGraphemeBase",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeGraphemeBase"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Unicode.Scalar.Properties"
+    ],
+    "signature" : "var isIDSBinaryOperator: Bool { get }",
+    "callName" : "isIDSBinaryOperator",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeIdsbinaryOperator"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Unicode.Scalar.Properties"
+    ],
+    "signature" : "var isFullCompositionExclusion: Bool { get }",
+    "callName" : "isFullCompositionExclusion",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeFullCompositionExclusion"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Character"
+    ],
+    "signature" : "var isNewline: Bool { get }",
+    "callName" : "isNewline",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeNewline"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Unicode.Scalar.Properties"
+    ],
+    "signature" : "var isPatternWhitespace: Bool { get }",
+    "callName" : "isPatternWhitespace",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybePatternWhitespace"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Unicode.Scalar.Properties"
+    ],
+    "signature" : "var isJoinControl: Bool { get }",
+    "callName" : "isJoinControl",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeJoinControl"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Unicode.Scalar.Properties"
+    ],
+    "signature" : "var isNoncharacterCodePoint: Bool { get }",
+    "callName" : "isNoncharacterCodePoint",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeNoncharacterCodePoint"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Unicode.Scalar.Properties"
+    ],
+    "signature" : "var isPatternSyntax: Bool { get }",
+    "callName" : "isPatternSyntax",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybePatternSyntax"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Unicode.Scalar.Properties"
+    ],
+    "signature" : "var isExtender: Bool { get }",
+    "callName" : "isExtender",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeExtender"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Unicode.Scalar.Properties"
+    ],
+    "signature" : "var isSoftDotted: Bool { get }",
+    "callName" : "isSoftDotted",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeSoftDotted"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Unicode.Scalar.Properties"
+    ],
+    "signature" : "var isMath: Bool { get }",
+    "callName" : "isMath",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeMath"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Character"
+    ],
+    "signature" : "var isWholeNumber: Bool { get }",
+    "callName" : "isWholeNumber",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeWholeNumber"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Unicode.Scalar.Properties"
+    ],
+    "signature" : "var isDiacritic: Bool { get }",
+    "callName" : "isDiacritic",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeDiacritic"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Unicode.Scalar.Properties"
+    ],
+    "signature" : "var isASCIIHexDigit: Bool { get }",
+    "callName" : "isASCIIHexDigit",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeAsciihexDigit"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Unicode.Scalar.Properties"
+    ],
+    "signature" : "var isQuotationMark: Bool { get }",
+    "callName" : "isQuotationMark",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeQuotationMark"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Unicode.Scalar.Properties"
+    ],
+    "signature" : "var isSentenceTerminal: Bool { get }",
+    "callName" : "isSentenceTerminal",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeSentenceTerminal"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Unicode.Scalar.Properties"
+    ],
+    "signature" : "var isIDStart: Bool { get }",
+    "callName" : "isIDStart",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeIdstart"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Unicode.Scalar.Properties"
+    ],
+    "signature" : "var isAlphabetic: Bool { get }",
+    "callName" : "isAlphabetic",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeAlphabetic"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Unicode.Scalar.Properties"
+    ],
+    "signature" : "var isDeprecated: Bool { get }",
+    "callName" : "isDeprecated",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeDeprecated"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Unicode.Scalar.Properties"
+    ],
+    "signature" : "var isDash: Bool { get }",
+    "callName" : "isDash",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeDash"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Unicode.Scalar.Properties"
+    ],
+    "signature" : "var isBidiMirrored: Bool { get }",
+    "callName" : "isBidiMirrored",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeBidiMirrored"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Unicode.Scalar.Properties"
+    ],
+    "signature" : "var isBidiControl: Bool { get }",
+    "callName" : "isBidiControl",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeBidiControl"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Character"
+    ],
+    "signature" : "var isLetter: Bool { get }",
+    "callName" : "isLetter",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeLetter"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Character"
+    ],
+    "signature" : "var isCurrencySymbol: Bool { get }",
+    "callName" : "isCurrencySymbol",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeCurrencySymbol"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Unicode.Scalar.Properties"
+    ],
+    "signature" : "var isIDSTrinaryOperator: Bool { get }",
+    "callName" : "isIDSTrinaryOperator",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeIdstrinaryOperator"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Unicode.Scalar.Properties"
+    ],
+    "signature" : "var isLogicalOrderException: Bool { get }",
+    "callName" : "isLogicalOrderException",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeLogicalOrderException"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Unicode.Scalar.Properties"
+    ],
+    "signature" : "var isVariationSelector: Bool { get }",
+    "callName" : "isVariationSelector",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeVariationSelector"
+  },
+  {
+    "returnType" : "Bool",
+    "types" : [
+      "Unicode.Scalar.Properties"
+    ],
+    "signature" : "var isCaseIgnorable: Bool { get }",
+    "callName" : "isCaseIgnorable",
+    "protocols" : [
+
+    ],
+    "matchingProtocols" : [
+
+    ],
+    "type" : "property",
+    "featureName" : "MaybeCaseIgnorable"
+  }
+]

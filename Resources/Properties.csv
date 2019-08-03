@@ -1,8 +1,2 @@
 Protocol,Property name,Retrun type
 Countable,count,Int
-MaybeEmpty,isEmpty,Bool
-MaybeLetter,isLetter,Bool
-MaybeLowercase,isLowercase,Bool
-MaybeNumber,isNumber,Bool
-MaybeUppercase,isUppercase,Bool
-MaybeWhitespace,isWhitespace,Bool

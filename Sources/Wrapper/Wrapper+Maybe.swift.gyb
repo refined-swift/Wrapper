@@ -1,14 +1,14 @@
-% import csv
-% source = '../../Resources/Properties.csv'
+% import json
+% source = '../../Resources/Maybe.json'
 % warning = 'Generated with gyb. Do not edit.'
 // ${warning}
 
 import Features
 % with open(source) as file:
-%   for row in csv.DictReader(file):
-%     protocol = row['Protocol']
-%     property = row['Property name']
-%     returnType = row['Retrun type']
+%   for feature in json.load(file):
+%     protocol = feature['featureName']
+%     property = feature['callName']
+%     returnType = feature['returnType']
 
 extension Wrapper where WrappedValue: ${protocol} {
     public var ${property}: ${returnType} {
