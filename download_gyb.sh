@@ -10,3 +10,5 @@ curl https://raw.githubusercontent.com/apple/swift/master/utils/SwiftFloatingPoi
 curl https://raw.githubusercontent.com/apple/swift/master/utils/gyb_stdlib_support.py > ${gyb}/gyb_stdlib_support.py
 curl https://raw.githubusercontent.com/apple/swift/master/utils/gyb_foundation_support.py > ${gyb}/gyb_foundation_support.py
 chmod +x ${gyb}/gyb
+
+curl https://raw.githubusercontent.com/apple/swift/master/LICENSE.txt > "${directory}/Vendor/gyb/LICENSE.txt"

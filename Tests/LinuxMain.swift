@@ -3,5 +3,6 @@ import XCTest
 import WrapperTests
 
 var tests = [XCTestCaseEntry]()
-tests += WrapperTests.allTests()
+tests += WrapperTests.__allTests()
+
 XCTMain(tests)

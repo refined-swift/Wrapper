@@ -1,5 +1,5 @@
 % import json
-% source = '../../Resources/Maybe.json'
+% source = '../../Resources/Properties.json'
 % warning = 'Generated with gyb. Do not edit.'
 // ${warning}
 
