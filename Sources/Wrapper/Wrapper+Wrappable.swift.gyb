@@ -1,0 +1,122 @@
+%{
+
+import json
+
+source = '../../Resources/Wrappable.json'
+
+identation = '    '
+
+def buildSignature(item):
+  """Build signature for any member."""
+  signature = item['signature']
+  available = item['available']
+  attribute = available + '\n    ' if available else ''
+  result = identation
+  result += attribute + signature
+  return result
+
+def buildOperatorBody(item):
+  """Build body for operator methods."""
+  signature = item['signature']
+  callName = item['callName']
+  isThrowing = item['isThrowing']
+  throws = 'try ' if isThrowing else ''
+  parameters = item['parameters']
+  if len(parameters) == 2:
+    lhs = item['parameters'][0]['internalName']
+    rhs = item['parameters'][1]['internalName']
+    lhsValue = lhs + ('.wrapped' if signature.find(': Self,', signature.index(lhs), signature.index(rhs)) >= 0 else '')
+    rhsValue = rhs + ('.wrapped' if signature.find(': Self)', signature.index(rhs)) >= 0 else '')
+    return identation + identation + 'return ' + throws + lhsValue + ' ' + callName + ' ' + rhsValue
+  else:
+    rhs = item['parameters'][0]['internalName']
+    return identation + identation + 'return ' + throws + callName + ' ' + rhs + '.wrapped'
+
+def buildParameterList(item):
+  result = '('
+  separator = ''
+  for parameter in item['parameters']:
+    result += separator
+    if parameter['externalLabel'] != '_':
+      result += parameter['externalLabel']
+      result += ': '
+    result += parameter['internalName']
+    separator = ', '
+  result += ')'
+  return result
+
+def buildInitBody(item):
+  """Build body for init methods."""
+  isThrowing = item['isThrowing']
+  result = identation + identation
+  if isThrowing:
+    result += 'let value = try WrappedValue.init'
+    result += buildParameterList(item)
+    result += '\n'
+    result += 'self = try Self.init(wrapping: value)'
+  else:
+    result += 'guard let value = WrappedValue.init'
+    result += buildParameterList(item)
+    result += ' else { return nil }'
+    result += '\n'
+    result += identation + identation
+    result += 'guard let wrapper = Self.init(value) else { return nil }'
+    result += '\n'
+    result += identation + identation
+    result += 'self = wrapper'
+  return result
+
+def buildPropertyBody(item):
+  """Build body for properties."""
+  isStatic = item['isStatic']
+  wrapped = 'WrappedValue' if isStatic else 'wrapped'
+  callName = item['callName']
+  isThrowing = item['isThrowing']
+  throws = 'try ' if isThrowing else ''
+  result = identation + identation
+  result += 'return ' + throws + wrapped + '.' + callName
+  return result
+
+def buildMethodBody(item):
+  """Build body for methods."""
+  wrapped = 'WrappedValue' if isStatic else 'wrapped'
+  callName = item['callName']
+  isThrowing = item['isThrowing']
+  throws = 'try ' if isThrowing else ''
+  result = identation + identation
+  result += 'return ' + throws + wrapped + '.' + callName
+  result += buildParameterList(item)
+  return result
+
+warning = 'Generated with gyb. Do not edit.'
+
+}%
+// ${warning}
+
+import Features
+% with open(source) as file:
+%   for wrappable in json.load(file):
+%     protocol = wrappable['protocolName']
+%     items = wrappable['items']
+
+/// Wrapper + ${protocol} extension.
+extension Wrapper where WrappedValue: ${protocol} {
+%     for item in items:
+%       isMethod = item['isMethod']
+%       isInit = item['isInit']
+%       isOperator = item['isOperator']
+${buildSignature(item)} {
+%       if isInit:
+${buildInitBody(item)}
+%       elif isOperator:
+${buildOperatorBody(item)}
+%       elif isMethod:
+${buildMethodBody(item)}
+%       else:
+${buildPropertyBody(item)}
+%       end
+    }
+%     end
+}
+%   end
+% end
