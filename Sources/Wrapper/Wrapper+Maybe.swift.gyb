@@ -12,6 +12,7 @@ import Features
 %     available = feature['available']
 %     attribute = available + '\n    ' if available else ''
 
+/// Wrapper + ${protocol} extension.
 extension Wrapper where WrappedValue: ${protocol} {
     ${attribute}public var ${property}: ${returnType} {
         return wrapped.${property}
