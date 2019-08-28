@@ -1,0 +1,50 @@
+%{
+
+import json
+
+source = '../../Resources/Operators.json'
+
+identation = '    '
+
+def buildSignature(item):
+  """Build signature for any member."""
+  signature = item['signature'].replace('-> Self', '-> WrappedValue')
+  available = item['available']
+  attribute = available + '\n    ' if available else ''
+  result = identation
+  result += attribute + signature
+  return result
+
+def buildOperatorBody(item):
+  """Build body for operator methods."""
+  signature = item['signature']
+  callName = item['callName']
+  parameters = 2 if signature.find('rhs') >= 0 else 1
+  if parameters == 2:
+    lhs = 'lhs'
+    rhs = 'rhs'
+    lhsValue = lhs + ('.wrapped' if signature.find(': Self,', signature.index(lhs), signature.index(rhs)) >= 0 else '')
+    rhsValue = rhs + ('.wrapped' if signature.find(': Self)', signature.index(rhs)) >= 0 else '')
+    return identation + identation + 'return ' + lhsValue + ' ' + callName + ' ' + rhsValue
+  else:
+    lhs = 'lhs'
+    return identation + identation + 'return ' + callName + lhs + '.wrapped'
+
+warning = 'Generated with gyb. Do not edit.'
+
+}%
+// ${warning}
+
+import Features
+% with open(source) as file:
+%   for wrappable in json.load(file):
+%     protocol = wrappable['featureName']
+
+/// Wrapper + ${protocol} extension.
+extension Wrapper where WrappedValue: ${protocol} {
+${buildSignature(wrappable)} {
+${buildOperatorBody(wrappable)}
+    }
+}
+%   end
+% end
