@@ -30,7 +30,7 @@ def buildOperatorBody(item):
     return identation + identation + 'return ' + throws + lhsValue + ' ' + callName + ' ' + rhsValue
   else:
     rhs = item['parameters'][0]['internalName']
-    return identation + identation + 'return ' + throws + callName + ' ' + rhs + '.wrapped'
+    return identation + identation + 'return ' + throws + callName + rhs + '.wrapped'
 
 def buildParameterList(item):
   result = '('
