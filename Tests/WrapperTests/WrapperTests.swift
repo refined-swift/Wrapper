@@ -3,11 +3,11 @@ import XCTest
 
 final class WrapperTests: XCTestCase {
     func testFailableInitHasDefaultImplementation() {
-        XCTAssertNotNil(WrapperMock(WrapperMock.validValue))
+        XCTAssertNotNil(WrapperMock(wrapping: WrapperMock.validValue))
     }
 
     func testFailableInitDefaultImplementationFailsOnError() {
-        XCTAssertNil(WrapperMock(WrapperMock.invalidValue))
+        XCTAssertNil(WrapperMock(wrapping: WrapperMock.invalidValue))
     }
 
     static var allTests = [

@@ -53,14 +53,18 @@ def buildInitBody(item):
     result += 'let value = try WrappedValue.init'
     result += buildParameterList(item)
     result += '\n'
-    result += 'self = try Self.init(wrapping: value)'
+    result += identation + identation
+    result += 'guard let wrapper = Self.init(wrapping: value) else { throw Error<WrappedValue, Self>(value: value, wrapper: Self.self) }'
+    result += '\n'
+    result += identation + identation
+    result += 'self = wrapper'
   else:
     result += 'guard let value = WrappedValue.init'
     result += buildParameterList(item)
     result += ' else { return nil }'
     result += '\n'
     result += identation + identation
-    result += 'guard let wrapper = Self.init(value) else { return nil }'
+    result += 'guard let wrapper = Self.init(wrapping: value) else { return nil }'
     result += '\n'
     result += identation + identation
     result += 'self = wrapper'

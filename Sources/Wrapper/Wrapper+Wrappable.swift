@@ -20,12 +20,12 @@ extension Wrapper where WrappedValue: CaseIterable {
 extension Wrapper where WrappedValue: CodingKey {
     public init?(stringValue: String) {
         guard let value = WrappedValue.init(stringValue: stringValue) else { return nil }
-        guard let wrapper = Self.init(value) else { return nil }
+        guard let wrapper = Self.init(wrapping: value) else { return nil }
         self = wrapper
     }
     public init?(intValue: Int) {
         guard let value = WrappedValue.init(intValue: intValue) else { return nil }
-        guard let wrapper = Self.init(value) else { return nil }
+        guard let wrapper = Self.init(wrapping: value) else { return nil }
         self = wrapper
     }
     public var stringValue: String {
@@ -81,7 +81,8 @@ extension Wrapper where WrappedValue: CustomStringConvertible {
 extension Wrapper where WrappedValue: Decodable {
     public init(from decoder: Decoder) throws {
         let value = try WrappedValue.init(from: decoder)
-self = try Self.init(wrapping: value)
+        guard let wrapper = Self.init(wrapping: value) else { throw Error<WrappedValue, Self>(value: value, wrapper: Self.self) }
+        self = wrapper
     }
 }
 
@@ -106,7 +107,7 @@ extension Wrapper where WrappedValue: LazyCollectionProtocol {
 extension Wrapper where WrappedValue: LosslessStringConvertible {
     public init?(_ description: String) {
         guard let value = WrappedValue.init(description) else { return nil }
-        guard let wrapper = Self.init(value) else { return nil }
+        guard let wrapper = Self.init(wrapping: value) else { return nil }
         self = wrapper
     }
 }

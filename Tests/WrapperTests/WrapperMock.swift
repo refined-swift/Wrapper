@@ -10,10 +10,8 @@ struct WrapperMock: Wrapper {
 
     let wrapped: WrappedValue
     
-    init(wrapping value: WrappedValue) throws {
-        guard value != WrapperMock.invalidValue else {
-            throw Error()
-        }
+    init?(wrapping value: WrappedValue) {
+        guard value != WrapperMock.invalidValue else { return nil }
         assert(value == WrapperMock.validValue)
         self.wrapped = value
     }
