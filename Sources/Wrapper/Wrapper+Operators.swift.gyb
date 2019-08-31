@@ -21,7 +21,7 @@ def buildSignature(item, lhsType, rhsType):
   available = item['available']
   attribute = available + '\n    ' if available else ''
   result = identation
-  result += attribute + signature
+  result += attribute + 'public ' + signature
   return result
 
 def buildOperatorBody(item, lhsSuffix, rhsSuffix):
