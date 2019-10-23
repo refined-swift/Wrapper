@@ -1,4 +1,4 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.1
 
 import PackageDescription
 
@@ -19,5 +19,6 @@ let package = Package(
         .testTarget(
             name: "WrapperTests",
             dependencies: ["Wrapper"]),
-    ]
+    ],
+    swiftLanguageVersions: [.version("5.1")]
 )
